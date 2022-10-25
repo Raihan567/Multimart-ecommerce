@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import heroImg from "../assets/images/hero-img.png";
 import "../styles/home.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Services from "../services/Services";
+import ProductList from "../components/Ui/ProductList";
+import products from "../assets/data/products";
 const Home = () => {
+  const [data, setData] = useState(products);
   const year = new Date().getFullYear();
+
+  useEffect(() => {
+    const filteredProducts = products.filter(
+      (item) => item.category === "chair"
+    );
+    setData(filteredProducts);
+  });
   return (
     <Helmet title={"Home"}>
       <section className="hero__section">
         <Container>
           <Row>
-            <Col lg="6" md="6" sm='12'>
+            <Col lg="6" md="6" sm="12">
               <div className="hero__content">
                 <p className="hero__subtitle">Trending Product in {year}</p>
                 <h2>Make Your Interior More Minimalist & modern</h2>
@@ -28,11 +39,25 @@ const Home = () => {
               </div>
             </Col>
             {/* Hero image */}
-            <Col lg="6" md="6" sm='12'>
+            <Col lg="6" md="6" sm="12">
               <div className="hero__img">
                 <img src={heroImg} alt="heroImage" />
               </div>
             </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <Services />
+
+      {/* trending products  */}
+      <section className="trending__products">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h2 className="section__title">Trending Products</h2>
+            </Col>
+            <ProductList data={data} />
           </Row>
         </Container>
       </section>
