@@ -9,13 +9,13 @@ const ProductCard = ({ item }) => {
     <Col lg="3" md="3">
       <motion.div whileHover={{ scale: 1.08 }} className="product__item">
         <div className="product-img">
-          <Link to="/shop/id">
+          <Link to={`/shop/${item.id}`}>
             <img src={item.imgUrl} alt="productImage" />
           </Link>
         </div>
         <div className="p-2 product__info">
           <h3 className="product__name">
-            <Link to="/shop/id">{item.productName}</Link>
+            <Link to={`/shop/${item.id}`}>{item.productName}</Link>
           </h3>
           <span>{item.category}</span>
         </div>
