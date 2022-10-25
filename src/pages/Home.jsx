@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import Services from "../services/Services";
 import ProductList from "../components/Ui/ProductList";
 import products from "../assets/data/products";
+import counterImg from "../assets/images/counter-timer-img.png";
+import Clock from "../components/Ui/Clock";
 const Home = () => {
   const [trendingProduct, setTrendingProduct] = useState([]);
   const [bestSalesProduct, setBestSalesProduct] = useState([]);
@@ -66,6 +68,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
       {/* Best sales products  */}
       <section className="bestSales__products">
         <Container>
@@ -74,6 +77,27 @@ const Home = () => {
               <h2 className="section__title">Best Sales Products</h2>
             </Col>
             <ProductList data={bestSalesProduct} />
+          </Row>
+        </Container>
+      </section>
+
+      {/* Time counter */}
+      <section className="timer__counter">
+        <Container className="">
+          <Row className="d-flex justify-content-between ">
+            <Col lg="6" md="6" sm="6" className="p-0 m-0">
+              <div className="clock__top-counter">
+                <h4 className="text-white fs-6 mb-2">Limited Offers</h4>
+                <h3 className="text-white fs-4 ">Quality Armchair</h3>
+              </div>
+              <Clock />
+              <motion.button whileTap={{ scale: 1.1 }} className="store__btn">
+                <Link to="/shop">Visit Store</Link>
+              </motion.button>
+            </Col>
+            <Col lg="6" md="6" sm="6" className="text-end">
+              <img className="img-fluid" src={counterImg} alt="counter image" />
+            </Col>
           </Row>
         </Container>
       </section>
