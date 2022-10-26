@@ -60,3 +60,14 @@
   color: var(--primary-color);
   text-decoration: none;
 }
+@media only screen and (max-width: 768px) {
+  .hero__content h2{
+    font-size: 2rem;
+  }
+  .hero__content p {
+    line-height: 30px;
+  }
+  .buy__btn{
+    font-size: 0.9rem;
+  }
+}
