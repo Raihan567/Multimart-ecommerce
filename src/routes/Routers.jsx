@@ -11,7 +11,7 @@ import Error from "../pages/Error";
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path={`/home` || '/'} element={<Home />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
