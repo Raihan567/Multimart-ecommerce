@@ -121,19 +121,19 @@ const Footer = () => {
               <ListGroup className="mt-3">
                 <ListGroupItem className="ps-0 border-0 text-decoration-none d-flex align-items-center gap-2 ">
                   <span>
-                    <i class="ri-map-pin-line bg-white fs-3 rounded"></i>
+                    <i className="ri-map-pin-line bg-white fs-3 rounded"></i>
                   </span>
                   <p className="mb-2">Muktagacha, Mymensingh, Dhaka</p>
                 </ListGroupItem>
                 <ListGroupItem className="ps-0 border-0 text-decoration-none  d-flex align-items-center gap-2">
                   <span>
-                    <i class="ri-phone-line bg-white fs-3 rounded"></i>
+                    <i className="ri-phone-line bg-white fs-3 rounded"></i>
                   </span>
                   <p className="mb-2">+880 123434324</p>
                 </ListGroupItem>
                 <ListGroupItem className="ps-0 border-0 text-decoration-none  d-flex align-items-center gap-2">
                   <span>
-                    <i class="ri-mail-line bg-white fs-3 rounded"></i>
+                    <i className="ri-mail-line bg-white fs-3 rounded"></i>
                   </span>
                   <p className="mb-2">example124@gmail.com</p>
                 </ListGroupItem>
