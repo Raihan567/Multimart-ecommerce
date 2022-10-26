@@ -13,6 +13,8 @@ import Clock from "../components/Ui/Clock";
 const Home = () => {
   const [trendingProduct, setTrendingProduct] = useState([]);
   const [bestSalesProduct, setBestSalesProduct] = useState([]);
+  const [mobileProducts, setMobileProducts] = useState([]);
+  const [wirelessProducts, setWirelessProducts] = useState([]);
   const year = new Date().getFullYear();
 
   useEffect(() => {
@@ -22,8 +24,16 @@ const Home = () => {
     const filteredBestSalesProducts = products.filter(
       (item) => item.category === "sofa"
     );
+    const filteredMobileProducts = products.filter(
+      (item) => item.category === "mobile"
+    );
+    const filteredWirelessProducts = products.filter(
+      (item) => item.category === "wireless"
+    );
     setTrendingProduct(filteredTrendingProducts);
     setBestSalesProduct(filteredBestSalesProducts);
+    setMobileProducts(filteredMobileProducts);
+    setWirelessProducts(filteredWirelessProducts);
   }, []);
   return (
     <Helmet title={"Home"}>
@@ -98,6 +108,19 @@ const Home = () => {
             <Col lg="6" md="6" sm="6" className="text-end">
               <img className="img-fluid" src={counterImg} alt="counter image" />
             </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* new arrivals */}
+      <section className="new__ari">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h2 className="section__title">New Arrivals</h2>
+            </Col>
+            <ProductList data={mobileProducts} />
+            <ProductList data={wirelessProducts} />
           </Row>
         </Container>
       </section>
