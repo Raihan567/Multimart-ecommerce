@@ -6,11 +6,15 @@ import { Col } from "reactstrap";
 import { Link } from "react-router-dom";
 const ProductCard = ({ item }) => {
   return (
-    <Col lg="3" md="3">
-      <motion.div whileHover={{ scale: 1.08 }} className="product__item">
+    <Col lg="3" md="4">
+      <div className="product__item">
         <div className="product-img">
           <Link to={`/shop/${item.id}`}>
-            <img src={item.imgUrl} alt="productImage" />
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              src={item.imgUrl}
+              alt="productImage"
+            />
           </Link>
         </div>
         <div className="p-2 product__info">
@@ -25,7 +29,7 @@ const ProductCard = ({ item }) => {
             <i className="ri-add-line"></i>
           </motion.span>
         </div>
-      </motion.div>
+      </div>
     </Col>
   );
 };

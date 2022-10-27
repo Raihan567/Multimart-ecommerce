@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Shop from "../pages/Shop";
 import Cart from "../pages/Cart";
@@ -11,7 +11,8 @@ import Error from "../pages/Error";
 const Routers = () => {
   return (
     <Routes>
-      <Route path={`/home` || '/'} element={<Home />} />
+      <Route path="/" element={<Home />}>
+      </Route>
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />

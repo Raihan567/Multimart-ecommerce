@@ -3,14 +3,14 @@ import { Col, Container, ListGroup, ListGroupItem, Row } from "reactstrap";
 import "./Footer.css";
 import Logo from "../../assets/images/eco-logo.png";
 import { Link } from "react-router-dom";
-const year = new Date().getFullYear()
+const year = new Date().getFullYear();
 const Footer = () => {
   return (
     <footer className="footer">
       <Container>
-      <hr/>
+        <hr />
         <Row>
-          <Col lg="4">
+          <Col lg="4" md="3">
             <div className="logo">
               <div>
                 <h1 className="text-white fs-3">Multimart</h1>
@@ -21,11 +21,11 @@ const Footer = () => {
               fugit similique ad quasi culpa quos, suscipit ut corporis. Ex?
             </p>
           </Col>
-          <Col lg="3">
+          <Col lg="3" md="3" className="mb-3">
             <div className="footer__quick_link">
               <h4 className="quick__link_title">Top Categories</h4>
               <ListGroup className="mt-3 ">
-              <ListGroupItem className="ps-0 border-0 text-decoration-none">
+                <ListGroupItem className="ps-0 border-0 text-decoration-none">
                   <Link
                     className="text-decoration-none text-black hover:text-blue "
                     to="#"
@@ -68,7 +68,7 @@ const Footer = () => {
               </ListGroup>
             </div>
           </Col>
-          <Col lg="2">
+          <Col lg="2" md="3" className="mb-3">
             <div className="footer__quick_link">
               <h4 className="quick__link_title">Useful Links</h4>
               <ListGroup className="mt-3">
@@ -115,7 +115,7 @@ const Footer = () => {
               </ListGroup>
             </div>
           </Col>
-          <Col lg="3">
+          <Col lg="3" md="4" className="mb-3">
             <div className="footer__quick_link">
               <h4 className="quick__link_title">Contact</h4>
               <ListGroup className="mt-3">
@@ -140,9 +140,11 @@ const Footer = () => {
               </ListGroup>
             </div>
           </Col>
-          <hr className="m-3"/>
+          <hr className="m-3" />
         </Row>
-        <Col lg='12' className="text-center py-3">Copyright {year} Developed by Abu Raihan. All right reserved.</Col>
+        <Col lg="12" className="text-center py-3">
+          Copyright {year} Developed by Abu Raihan. All right reserved.
+        </Col>
       </Container>
     </footer>
   );

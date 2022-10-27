@@ -59,7 +59,7 @@ img {
   width: 100%;
 }
 section {
-  padding: 60px 0;
+  padding: 60px;
 }
 .section__title {
   color: var(--primary-color);

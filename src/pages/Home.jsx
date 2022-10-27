@@ -42,9 +42,9 @@ const Home = () => {
   }, []);
   return (
     <Helmet title={"Home"}>
-      <section className="hero__section">
+      <section className="hero__section ml-0">
         <Container>
-          <Row>
+          <Row className="d-flex align-items-center justify-content-between">
             <Col lg="6" md="6" sm="12">
               <div className="hero__content">
                 <p className="hero__subtitle">Trending Product in {year}</p>
@@ -97,10 +97,10 @@ const Home = () => {
       </section>
 
       {/* Time counter */}
-      <section className="timer__counter">
-        <Container className="">
+      <section className="timer__counter ">
+        <Container>
           <Row className="d-flex justify-content-between ">
-            <Col lg="6" md="6" sm="6" className="p-0 m-0">
+            <Col lg="6" md="12" sm="12" className="col__center">
               <div className="clock__top-counter">
                 <h4 className="text-white fs-6 mb-2">Limited Offers</h4>
                 <h3 className="text-white fs-4 ">Quality Armchair</h3>
@@ -110,7 +110,7 @@ const Home = () => {
                 <Link to="/shop">Visit Store</Link>
               </motion.button>
             </Col>
-            <Col lg="6" md="6" sm="6" className="text-end">
+            <Col lg="6" md="12" sm="12" className="text-end counter__image">
               <img className="img-fluid" src={counterImg} alt="counter image" />
             </Col>
           </Row>

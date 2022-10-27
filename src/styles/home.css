@@ -60,14 +60,41 @@
   color: var(--primary-color);
   text-decoration: none;
 }
+@media only screen and (max-width: 992px) {
+  .counter__image {
+    display: none;
+  }
+  .section__title {
+    font-size: 1.7rem;
+  }
+  .hero__content h2 {
+    font-size: 2rem;
+  }
+  .clock__top-counter{
+    text-align: center;
+  }
+}
 @media only screen and (max-width: 768px) {
-  .hero__content h2{
+  .hero__content h2 {
     font-size: 2rem;
   }
   .hero__content p {
     line-height: 30px;
   }
-  .buy__btn{
+  .buy__btn {
     font-size: 0.9rem;
+  }
+  .store__btn {
+    text-align: center !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hero__content {
+    padding: 0;
+  }
+  .timer__counter {
+    padding: 1rem;
+    margin: 0 !important;
   }
 }
