@@ -42,7 +42,7 @@ const Home = () => {
   }, []);
   return (
     <Helmet title={"Home"}>
-      <section className="hero__section ml-0">
+      <section className="hero__section">
         <Container>
           <Row className="d-flex align-items-center justify-content-between">
             <Col lg="6" md="6" sm="12">
@@ -129,6 +129,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
       {/* Popular category */}
       <section className="popular__category">
         <Container>
@@ -137,7 +138,7 @@ const Home = () => {
               <h2 className="section__title">Popular Categories</h2>
             </Col>
             <ProductList data={popularProducts} />
-            {/* <ProductList data={wirelessProducts} /> */}
+            <ProductList data={wirelessProducts} />
           </Row>
         </Container>
       </section>

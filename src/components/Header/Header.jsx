@@ -45,7 +45,7 @@ const Header = () => {
   // });
   const toggleMenu = () => menuRef.current.classList.toggle("nav__active");
   return (
-    <header className="header sticky-top bg-white">
+    <header className="header fixed-top bg-white">
       <Container>
         <Row>
           <div className="nav__wrapper ">

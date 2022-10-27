@@ -21,10 +21,11 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
-
 h1,
 h2,
 h3,
@@ -59,7 +60,7 @@ img {
   width: 100%;
 }
 section {
-  padding: 60px;
+  padding: 60px 0;
 }
 .section__title {
   color: var(--primary-color);

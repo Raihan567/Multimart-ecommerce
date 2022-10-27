@@ -8,9 +8,8 @@ const Footer = () => {
   return (
     <footer className="footer">
       <Container>
-        <hr />
-        <Row>
-          <Col lg="4" md="3">
+        <Row className="pt-3">
+          <Col lg="4" md="3" className="pt-2">
             <div className="logo">
               <div>
                 <h1 className="text-white fs-3">Multimart</h1>
@@ -142,7 +141,7 @@ const Footer = () => {
           </Col>
           <hr className="m-3" />
         </Row>
-        <Col lg="12" className="text-center py-3">
+        <Col lg="12" className="text-center py-3 copyright">
           Copyright {year} Developed by Abu Raihan. All right reserved.
         </Col>
       </Container>
