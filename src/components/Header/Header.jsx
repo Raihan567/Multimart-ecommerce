@@ -20,15 +20,13 @@ const nav__links = [
     path: "shop",
     display: "Shop",
   },
-  {
-    path: "login",
-    display: "Login",
-  },
 ];
 const Header = () => {
   // const headerRef = useRef(null);
+
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const menuRef = useRef(null);
+
   // const stickyHeaderFunc = () => {
   //   window.addEventListener("scroll", () => {
   //     if (
@@ -45,6 +43,7 @@ const Header = () => {
   //   stickyHeaderFunc();
   //   return () => window.removeEventListener("scroll", stickyHeaderFunc);
   // });
+
   const toggleMenu = () => menuRef.current.classList.toggle("nav__active");
   return (
     <header className="header fixed-top bg-white">

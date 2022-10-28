@@ -19,17 +19,16 @@ const Shop = () => {
       setProductsData(filterProducts);
     }
 
-    if (filterValue === "mobile") {
+    if (filterValue === "sofa") {
       const filterProducts = products.filter(
-        (item) => item.category === "mobile"
+        (item) => item.category === "sofa"
       );
 
       setProductsData(filterProducts);
     }
-
-    if (filterValue === "sofa") {
+    if (filterValue === "mobile") {
       const filterProducts = products.filter(
-        (item) => item.category === "sofa"
+        (item) => item.category === "mobile"
       );
 
       setProductsData(filterProducts);
@@ -55,9 +54,7 @@ const Shop = () => {
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
     const searchProduct = products.filter((item) =>
-      item.productName
-        .toLocaleLowerCase()
-        .includes(searchTerm.toLocaleLowerCase())
+      item.category.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
     );
 
     setProductsData(searchProduct);
