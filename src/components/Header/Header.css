@@ -69,6 +69,11 @@
 .cart__icon {
   position: relative;
 }
+
+.deco-none {
+  text-decoration: none !important;
+}
+
 .badge {
   position: absolute;
   content: "";
@@ -86,6 +91,7 @@
   font-weight: 600;
   z-index: 100;
 }
+
 /* 
 .sticky__header {
   width: 100%;

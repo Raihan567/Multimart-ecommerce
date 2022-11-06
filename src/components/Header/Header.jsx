@@ -87,7 +87,9 @@ const Header = () => {
                 <span className="badge">0</span>
               </span>
               <span className="cart__icon">
-                <i className="ri-shopping-bag-line"></i>
+                <Link to="/cart">
+                  <i className="ri-shopping-bag-line deco-none"></i>
+                </Link>
                 <span className="badge">{totalQuantity}</span>
               </span>
               <span>
