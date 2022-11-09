@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import products from "../assets/data/products";
 import Helmet from "../components/Helmet/Helmet";
@@ -54,7 +54,9 @@ const Shop = () => {
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
     const searchProduct = products.filter((item) =>
-      item.productName.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+      item.productName
+        .toLocaleLowerCase()
+        .includes(searchTerm.toLocaleLowerCase())
     );
 
     setProductsData(searchProduct);
@@ -66,7 +68,7 @@ const Shop = () => {
 
       <Container>
         <Row className="my-5">
-          <Col lg="3" md="3" sm='6'>
+          <Col lg="3" md="3" sm="6">
             <div className="filter__widget text-center ">
               <select onChange={handleFilter}>
                 <option>Filter By Category</option>
@@ -78,7 +80,7 @@ const Shop = () => {
               </select>
             </div>
           </Col>
-          <Col lg="3" md="3" sm='6'>
+          <Col lg="3" md="3" sm="6">
             <div className="filter__widget text-center ">
               <select>
                 <option disabled>Sort By Order</option>
