@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import { useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import Logo from "../../assets/images/eco-logo.png";
 import userIcon from "../../assets/images/user-icon.png";
@@ -26,6 +26,7 @@ const Header = () => {
 
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   // const stickyHeaderFunc = () => {
   //   window.addEventListener("scroll", () => {
@@ -45,6 +46,10 @@ const Header = () => {
   // });
 
   const toggleMenu = () => menuRef.current.classList.toggle("nav__active");
+
+  const goToAddCart = () => {
+    navigate("/cart");
+  };
   return (
     <header className="header fixed-top bg-white">
       <Container>
@@ -86,10 +91,10 @@ const Header = () => {
                 <i className="ri-heart-line"></i>
                 <span className="badge">0</span>
               </span>
-              <span className="cart__icon">
-                <Link to="/cart">
-                  <i className="ri-shopping-bag-line deco-none"></i>
-                </Link>
+              <span className="cart__icon" onClick={goToAddCart}>
+                {/* <Link to="/cart"> */}
+                <i className="ri-shopping-bag-line deco-none"></i>
+                {/* </Link> */}
                 <span className="badge">{totalQuantity}</span>
               </span>
               <span>

@@ -20,12 +20,7 @@ const Cart = () => {
           <Row>
             <Col lg="9">
               {cartItems.length === 0 ? (
-                <div>
-                  <h2 className="fs-4 text-center">No item to the cart</h2>
-                  <p className="fs-5 text-center text-decoration-none">
-                    <Link to="/shop">Go To Shopping</Link>
-                  </p>
-                </div>
+                <h2 className="fs-4 text-center">No item to the cart</h2>
               ) : (
                 <table className="table bordered">
                   <thead>
@@ -46,7 +41,7 @@ const Cart = () => {
               )}
             </Col>
             <Col lg="3">
-              <div>
+              <div className="d-flex align-items-center justify-content-between">
                 <h4>Subtotal</h4>
                 <span className="fs-4 fw-bold">${totalAmount}</span>
               </div>
