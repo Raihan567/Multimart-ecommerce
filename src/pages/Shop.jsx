@@ -54,7 +54,7 @@ const Shop = () => {
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
     const searchProduct = products.filter((item) =>
-      item.category.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+      item.productName.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
     );
 
     setProductsData(searchProduct);
@@ -66,8 +66,8 @@ const Shop = () => {
 
       <Container>
         <Row className="my-5">
-          <Col lg="3" md="3">
-            <div className="filter__widget">
+          <Col lg="3" md="3" sm='6'>
+            <div className="filter__widget text-center ">
               <select onChange={handleFilter}>
                 <option>Filter By Category</option>
                 <option value="sofa">Sofa</option>
@@ -78,8 +78,8 @@ const Shop = () => {
               </select>
             </div>
           </Col>
-          <Col lg="3" md="3">
-            <div className="filter__widget">
+          <Col lg="3" md="3" sm='6'>
+            <div className="filter__widget text-center ">
               <select>
                 <option disabled>Sort By Order</option>
                 <option value="ascending">Ascending</option>
@@ -88,7 +88,7 @@ const Shop = () => {
             </div>
           </Col>
           <Col lg="6" md="6">
-            <div className="search__box">
+            <div className="search__box ">
               <input
                 type="text"
                 placeholder="Search what you need..."
