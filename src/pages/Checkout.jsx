@@ -16,7 +16,7 @@ const Checkout = () => {
           <Row>
             <Col lg="8">
               <h6 className="fw-bold mb-3 fs-5">Billing Information</h6>
-              <form className="form-group py-3 ">
+              <form className="auth__form ">
                 <FormGroup className="form__group">
                   <input
                     className="form-control"
