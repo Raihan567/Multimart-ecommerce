@@ -16,7 +16,7 @@ const Checkout = () => {
           <Row>
             <Col lg="8">
               <h6 className="fw-bold mb-3 fs-5">Billing Information</h6>
-              <form className="auth__form ">
+              <form>
                 <FormGroup className="form__group">
                   <input
                     className="form-control"
@@ -68,7 +68,7 @@ const Checkout = () => {
                 </FormGroup>
               </form>
             </Col>
-            <Col lg="4" className=" mt-3">
+            <Col lg="4" className="place__order mt-5">
               <div className="checkout__cart">
                 <h6>
                   Total Quantity: <span>{totalQuantity} items</span>
