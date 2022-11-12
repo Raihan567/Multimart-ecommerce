@@ -12,7 +12,7 @@ const Error = () => {
           <Col lg="12">
             <h2>404! Page not found.</h2>
             <h4>
-              <Link to="/">Back to home</Link>
+              <Link to="/home">Back to home</Link>
             </h4>
           </Col>
         </Row>

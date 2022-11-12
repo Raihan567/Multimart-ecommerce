@@ -136,7 +136,7 @@ const Signup = () => {
                   </button>
                   <p className="mt-2">
                     Already have an account?{" "}
-                    <Link className="text-decoration-none" to="/signup">
+                    <Link className="text-decoration-none" to="/login">
                       Please login here
                     </Link>
                   </p>

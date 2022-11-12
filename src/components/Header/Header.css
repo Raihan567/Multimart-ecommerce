@@ -49,11 +49,33 @@
   cursor: pointer;
   color: var(--primary-color);
 }
-.nav__icon span img {
+.nav__icon  .profile img {
   width: 35px;
   height: 35px;
   cursor: pointer;
   margin-top: -13px;
+}
+.nav__icon .profile{
+  position: relative;
+  z-index: 9;
+}
+.nav__icon .profile .profile__action{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color:rgba(221, 221, 221, 0.849);
+  color: rgba(0, 0, 0, 0.541) ;
+  line-height: 30px;
+  display: none;
+  cursor: pointer;
+}
+.show__ProfileAction{
+  display: block !important;
 }
 .mobile__menu {
   font-size: 1.4rem;
