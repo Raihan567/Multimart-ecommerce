@@ -8,6 +8,7 @@ import Checkout from "../pages/Checkout";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import ProtectedRoutes from "./ProtectedRoutes";
+import PlaceOrder from "../pages/PlaceOrder";
 
 const Routers = () => {
   return (
@@ -17,6 +18,7 @@ const Routers = () => {
       <Route path="shop" element={<Shop />} />
       <Route path="/shop/:id" element={<ProductDetails />} />
       <Route path="cart" element={<Cart />} />
+      <Route path="placeOrder" element={<PlaceOrder />} />
       <Route
         path="/checkout"
         element={

@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Col, Container, FormGroup, Row } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/Ui/CommonSection";
@@ -8,6 +9,11 @@ const Checkout = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const fastDelivery = 10;
+  const navigate = useNavigate();
+
+  const placeOrder =()=>{
+    navigate('/placeOrder')
+  }
   return (
     <Helmet title="- Checkout">
       <CommonSection title="Checkout"></CommonSection>
@@ -85,7 +91,7 @@ const Checkout = () => {
                 <h4>
                   Total Cost: <span>${totalAmount + fastDelivery}</span>
                 </h4>
-                <button className="buy__btn Auth__btn fw-bold w-100">
+                <button className="buy__btn Auth__btn fw-bold w-100" onClick={placeOrder}>
                   Place an Order
                 </button>
               </div>
