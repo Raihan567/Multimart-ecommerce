@@ -10,6 +10,7 @@ import "./Header.css";
 
 import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
+import { auth } from "../../firebase.config";
 const nav__links = [
   {
     path: "home",
@@ -92,9 +93,9 @@ const Header = () => {
                     <li className="nav__item" key={index}>
                       <NavLink
                         to={item.path}
-                        // className={(navClass) =>
-                        //   navClass.isActive ? "nav__active" : ""
-                        // }
+                        className={(navClass) =>
+                          navClass.isActive ? "nav__active" : ""
+                        }
                       >
                         {item.display}
                       </NavLink>

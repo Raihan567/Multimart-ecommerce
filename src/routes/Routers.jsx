@@ -7,7 +7,6 @@ import ProductDetails from "../pages/ProductDetails";
 import Checkout from "../pages/Checkout";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-import Error from "../pages/Error";
 import ProtectedRoutes from "./ProtectedRoutes";
 
 const Routers = () => {
@@ -28,7 +27,7 @@ const Routers = () => {
       />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
-      <Route path="*" element={<Error />} />
+      <Route path="*" element={<Navigate to='/home' />} />
     </Routes>
   );
 };

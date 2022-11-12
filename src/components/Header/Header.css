@@ -54,6 +54,7 @@
   height: 35px;
   cursor: pointer;
   margin-top: -13px;
+  border-radius: 50%;
 }
 .nav__icon .profile{
   position: relative;
