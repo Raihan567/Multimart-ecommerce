@@ -70,6 +70,7 @@ const Header = () => {
 
   const toggleProfileActions = () =>
     profileActionRef.current.classList.toggle("show__ProfileAction");
+    
   return (
     <header className="header fixed-top bg-white">
       <Container>
