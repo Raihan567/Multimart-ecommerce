@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import products from "../assets/data/products";
 import Helmet from "../components/Helmet/Helmet";
@@ -11,6 +11,13 @@ const Shop = () => {
   const handleFilter = (e) => {
     const filterValue = e.target.value;
 
+    if (filterValue === "plant") {
+      const filterProducts = products.filter(
+        (item) => item.category === "plant"
+      );
+
+      setProductsData(filterProducts);
+    }
     if (filterValue === "chair") {
       const filterProducts = products.filter(
         (item) => item.category === "chair"
@@ -62,6 +69,21 @@ const Shop = () => {
     setProductsData(searchProduct);
   };
 
+  const handleSort = (e) => {
+    const sortValue = e.target.value;
+    if (sortValue === "ascending") {
+      const ascendingOrder = products.sort((a, b) => {
+        a.productName > b.productName ? 1 : -1;
+      });
+      setProductsData(ascendingOrder);
+    }
+    if (sortValue === "descending") {
+      const descendingOrder = products.sort((a, b) => {
+        b.productName < a.productName ? -1 : 1;
+      });
+      setProductsData(descendingOrder);
+    }
+  };
   return (
     <Helmet title={"Shop"}>
       <CommonSection title="Products" />
@@ -72,6 +94,7 @@ const Shop = () => {
             <div className="filter__widget text-center ">
               <select onChange={handleFilter}>
                 <option>Filter By Category</option>
+                <option value="plant">Plant</option>
                 <option value="sofa">Sofa</option>
                 <option value="mobile">Mobile</option>
                 <option value="chair">Chair</option>
@@ -82,8 +105,8 @@ const Shop = () => {
           </Col>
           <Col lg="3" md="3" sm="6">
             <div className="filter__widget text-center ">
-              <select>
-                <option disabled>Sort By Order</option>
+              <select onChange={handleSort}>
+                <option >Sort By Order</option>
                 <option value="ascending">Ascending</option>
                 <option value="descending">Descending</option>
               </select>

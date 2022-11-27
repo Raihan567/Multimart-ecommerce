@@ -82,7 +82,7 @@ const Header = () => {
                 <img src={Logo} alt="logo" />
               </Link>
               <Link className="text-decoration-none" to="/">
-                <h1>Multimart</h1>
+                <h1>Furniture Zone</h1>
               </Link>
             </div>
 

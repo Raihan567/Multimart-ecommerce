@@ -1,5 +1,6 @@
 .hero__section {
   background: var(--hero-bg);
+  background: #E8F9FD;
 }
 .hero__content h2 {
   color: var(--primary-color);
@@ -65,6 +66,11 @@
 .store__btn a {
   color: var(--primary-color);
   text-decoration: none;
+}
+/* news later */
+.news__later{
+  background: rgba(0, 0, 0, 0.900);
+  
 }
 @media only screen and (max-width: 992px) {
   .counter__image {

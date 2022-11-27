@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
-import heroImg from "../assets/images/hero-img.png";
+import heroImg from "../assets/images/hero-image.png";
 import "../styles/home.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -20,7 +20,7 @@ const Home = () => {
 
   useEffect(() => {
     const filteredTrendingProducts = products.filter(
-      (item) => item.category === "chair"
+      (item) => item.category === "plant"
     );
     const filteredBestSalesProducts = products.filter(
       (item) => item.category === "sofa"
@@ -48,12 +48,13 @@ const Home = () => {
             <Col lg="6" md="6" sm="12">
               <div className="hero__content">
                 <p className="hero__subtitle">Trending Product in {year}</p>
-                <h2>Make Your Interior More Minimalist & modern</h2>
+                <h2>Let's Make Your Interior More Beautiful & Modern</h2>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet dicta commodi assumenda tenetur deleniti eaque nemo
-                  exercitationem, nobis facilis fugit eos similique debitis
-                  eligendi molestias voluptate nihil qui repudiandae asperiores.
+                  Modern design is an interior design style characterized by a
+                  monochromatic color palette, clean lines, minimalism, natural
+                  materials, and natural light. It refers specifically to a
+                  historical aesthetic movement that took place during the early
+                  to mid-twentieth century.
                 </p>
                 <motion.button whileTap={{ scale: 1.2 }} className="buy__btn">
                   <Link to="/shop">SHOP NOW</Link>
@@ -77,7 +78,13 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2 className="section__title">Trending Products</h2>
+              <h2 className="section__title">
+                A Huge Collection of Furniture Products for your interior
+              </h2>
+              <p className="w-75 text-center m-auto">
+                If you are looking for quality design furniture's? Then welcome
+                we have different types of furniture waiting for delivery.
+              </p>
             </Col>
             <ProductList data={trendingProduct} />
           </Row>
@@ -125,7 +132,6 @@ const Home = () => {
               <h2 className="section__title">New Arrivals</h2>
             </Col>
             <ProductList data={mobileProducts} />
-            <ProductList data={wirelessProducts} />
           </Row>
         </Container>
       </section>
@@ -139,6 +145,34 @@ const Home = () => {
             </Col>
             <ProductList data={popularProducts} />
             <ProductList data={wirelessProducts} />
+          </Row>
+        </Container>
+      </section>
+
+      {/* News Later */}
+      <section className="news__later">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center m-auto">
+              <h2 className="section__title text-white">
+                Subscribe for get latest news update about products
+              </h2>
+              <p className="text-center">
+                Everyday we make new product and supply to the customer & taking
+                order <br /> regularly. Also add our website. Subscribe for
+                update.
+              </p>
+              <div className="subscribe__box  ">
+                <input
+                  type="text"
+                  className="form-control w-50 m-auto "
+                  placeholder="Enter your email"
+                />
+                <motion.button whileTap={{ scale: 1.2 }} className="buy__btn">
+                  Subscribe
+                </motion.button>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
