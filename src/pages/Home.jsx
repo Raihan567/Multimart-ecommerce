@@ -10,7 +10,10 @@ import ProductList from "../components/Ui/ProductList";
 import products from "../assets/data/products";
 import counterImg from "../assets/images/counter-timer-img.png";
 import Clock from "../components/Ui/Clock";
+import useGetData from "../custom-hooks/useGetData";
+import { RotatingLines } from "react-loader-spinner";
 const Home = () => {
+  const { data: products, loading } = useGetData("products");
   const [trendingProduct, setTrendingProduct] = useState([]);
   const [bestSalesProduct, setBestSalesProduct] = useState([]);
   const [mobileProducts, setMobileProducts] = useState([]);
@@ -39,7 +42,7 @@ const Home = () => {
     setMobileProducts(filteredMobileProducts);
     setWirelessProducts(filteredWirelessProducts);
     setPopularProducts(filteredPopularCategory);
-  }, []);
+  }, [products]);
   return (
     <Helmet title={"Home"}>
       <section className="hero__section">
@@ -86,7 +89,21 @@ const Home = () => {
                 we have different types of furniture waiting for delivery.
               </p>
             </Col>
-            <ProductList data={trendingProduct} />
+            {loading ? (
+              <div className="text-center">
+                <RotatingLines
+                  height="80"
+                  width="80"
+                  radius="9"
+                  color="red"
+                  ariaLabel="loading"
+                  wrapperStyle
+                  wrapperClass
+                />
+              </div>
+            ) : (
+              <ProductList data={trendingProduct} />
+            )}
           </Row>
         </Container>
       </section>
@@ -98,7 +115,21 @@ const Home = () => {
             <Col lg="12" className="text-center">
               <h2 className="section__title">Best Sales Products</h2>
             </Col>
-            <ProductList data={bestSalesProduct} />
+            {loading ? (
+              <div className="text-center">
+                <RotatingLines
+                  height="80"
+                  width="80"
+                  radius="9"
+                  color="red"
+                  ariaLabel="loading"
+                  wrapperStyle
+                  wrapperClass
+                />
+              </div>
+            ) : (
+              <ProductList data={bestSalesProduct} />
+            )}
           </Row>
         </Container>
       </section>
@@ -131,7 +162,21 @@ const Home = () => {
             <Col lg="12" className="text-center">
               <h2 className="section__title">New Arrivals</h2>
             </Col>
-            <ProductList data={mobileProducts} />
+            {loading ? (
+              <div className="text-center">
+                <RotatingLines
+                  height="80"
+                  width="80"
+                  radius="9"
+                  color="red"
+                  ariaLabel="loading"
+                  wrapperStyle
+                  wrapperClass
+                />
+              </div>
+            ) : (
+              <ProductList data={mobileProducts} />
+            )}
           </Row>
         </Container>
       </section>
@@ -143,8 +188,36 @@ const Home = () => {
             <Col lg="12" className="text-center">
               <h2 className="section__title">Popular Categories</h2>
             </Col>
-            <ProductList data={popularProducts} />
-            <ProductList data={wirelessProducts} />
+            {loading ? (
+              <div className="text-center">
+                <RotatingLines
+                  height="80"
+                  width="80"
+                  radius="9"
+                  color="red"
+                  ariaLabel="loading"
+                  wrapperStyle
+                  wrapperClass
+                />
+              </div>
+            ) : (
+              <ProductList data={popularProducts} />
+            )}
+            {loading ? (
+              <div className="text-center">
+                <RotatingLines
+                  height="80"
+                  width="80"
+                  radius="9"
+                  color="red"
+                  ariaLabel="loading"
+                  wrapperStyle
+                  wrapperClass
+                />
+              </div>
+            ) : (
+              <ProductList data={wirelessProducts} />
+            )}
           </Row>
         </Container>
       </section>

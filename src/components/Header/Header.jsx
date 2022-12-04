@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import { useSelector } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import Logo from "../../assets/images/eco-logo.png";
 import userIcon from "../../assets/images/user-icon.png";
@@ -70,7 +70,7 @@ const Header = () => {
 
   const toggleProfileActions = () =>
     profileActionRef.current.classList.toggle("show__ProfileAction");
-    
+
   return (
     <header className="header fixed-top bg-white">
       <Container>
@@ -110,7 +110,7 @@ const Header = () => {
             <div className="nav__icon">
               <span className="fav__icon">
                 <i className="ri-heart-line"></i>
-                <span className="badge">2</span>  
+                <span className="badge">2</span>
               </span>
               <span className="cart__icon" onClick={goToAddCart}>
                 {/* <Link to="/cart"> */}
@@ -133,11 +133,37 @@ const Header = () => {
                   onClick={toggleProfileActions}
                 >
                   {currentUser ? (
-                    <span onClick={logout}>Logout</span>
+                    <ul>
+                      <li onClick={logout}>Logout</li>
+                      <li>
+                        <Link
+                          className="text-decoration-none text-black"
+                          to="/dashboard"
+                        >
+                          Dashboard
+                        </Link>
+                      </li>
+                    </ul>
                   ) : (
                     <div className="d-flex align-items-center justify-content-center flex-column rounded">
-                      <Link className="text-decoration-none text-black" to="/signup">SignUp</Link>
-                      <Link className="text-decoration-none text-black" to="/login">Login</Link>
+                      <Link
+                        className="text-decoration-none text-black"
+                        to="/signup"
+                      >
+                        SignUp
+                      </Link>
+                      <Link
+                        className="text-decoration-none text-black"
+                        to="/login"
+                      >
+                        Login
+                      </Link>
+                      <Link
+                        className="text-decoration-none text-black"
+                        to="/login"
+                      >
+                        Dashboard
+                      </Link>
                     </div>
                   )}
                 </div>

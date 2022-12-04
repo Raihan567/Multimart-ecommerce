@@ -4,9 +4,11 @@ import products from "../assets/data/products";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/Ui/CommonSection";
 import ProductList from "../components/Ui/ProductList";
+import useGetData from "../custom-hooks/useGetData";
 import "../styles/shop.css";
 const Shop = () => {
   const [productsData, setProductsData] = useState(products);
+  // const { data: products, loading } = useGetData("products");
 
   const handleFilter = (e) => {
     const filterValue = e.target.value;

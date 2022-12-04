@@ -10,25 +10,50 @@ import CommonSection from "../components/Ui/CommonSection";
 import { cartActions } from "../redux/slices/cartSlice";
 import "../styles/Product-details.css";
 import ProductList from "../components/Ui/ProductList";
+import { db } from "../firebase.config";
+import { doc, getDoc } from "firebase/firestore";
+import useGetData from "../custom-hooks/useGetData";
+import { RotatingLines } from "react-loader-spinner";
+
 const ProductDetails = () => {
+  const [product, setProducts] = useState({});
   const { id } = useParams();
   const [tab, setTab] = useState("desc");
   const reviewUser = useRef("");
   const reviewMsg = useRef("");
   const [rating, setRating] = useState(null);
-  const product = products.find((item) => item.id === id);
+
+  // const product = products.find((item) => item.id === id);
+
+  const { data: products, loading } = useGetData("products");
+
+  const docRef = doc(db, "products", id);
+
+  useEffect(() => {
+    const getProduct = async () => {
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setProducts(docSnap.data());
+      } else {
+        console.log("No product");
+      }
+    };
+    getProduct();
+  }, []);
   const {
     imgUrl,
     productName,
     price,
-    avgRating,
-    reviews,
+    // avgRating,
+    // reviews,
     description,
     shortDesc,
     category,
   } = product;
 
   const dispatch = useDispatch();
+
   const addToCart = () => {
     dispatch(
       cartActions.addItem({
@@ -56,7 +81,7 @@ const ProductDetails = () => {
     };
 
     console.log(reviewObj);
-    toast.success('Review submitted successfully')
+    toast.success("Review submitted successfully");
   };
 
   useEffect(() => {
@@ -91,9 +116,7 @@ const ProductDetails = () => {
                         <i className="ri-star-half-s-fill"></i>
                       </span>
                     </div>
-                    <p>
-                      ( <span>{avgRating}</span> ratings){" "}
-                    </p>
+                    <p>{/* ( <span>{avgRating}</span> ratings){" "} */}</p>
                   </div>
                   <div className="d-flex align-items-center  gap-5">
                     <span className="product__price">${price}</span>
@@ -127,7 +150,7 @@ const ProductDetails = () => {
                     onClick={() => setTab("review")}
                   >
                     {" "}
-                    Review ({reviews.length})
+                    Review
                   </h6>
                 </div>
                 {tab === "desc" ? (
@@ -137,15 +160,15 @@ const ProductDetails = () => {
                 ) : (
                   <p className="mt-5 product__review">
                     <div className="review__wrapper">
-                      <ul>
-                        {reviews.map((item, index) => (
+                      {/* <ul>
+                        {reviews?.map((item, index) => (
                           <li key={index}>
                             <h6 className="text-black">John Doe</h6>
                             <span>{item.rating} (rating)</span>
                             <p>{item.text}</p>
                           </li>
                         ))}
-                      </ul>
+                      </ul> */}
 
                       <div className="review__form">
                         <h4 className="text-black mb-4">
@@ -226,7 +249,21 @@ const ProductDetails = () => {
               <Col lg="12">
                 <h2 className="related__title">You might also like </h2>
               </Col>
-              <ProductList data={relatedProduct} />
+              {loading ? (
+                <div className="text-center">
+                  <RotatingLines
+                    height="80"
+                    width="80"
+                    radius="9"
+                    color="red"
+                    ariaLabel="loading"
+                    wrapperStyle
+                    wrapperClass
+                  />
+                </div>
+              ) : (
+                <ProductList data={relatedProduct} />
+              )}
             </Row>
           </Container>
         </section>

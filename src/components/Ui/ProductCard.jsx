@@ -25,13 +25,13 @@ const ProductCard = ({ item }) => {
     <Col lg="3" md="4">
       <div className="product__item">
         <div className="product-img">
-          <Link to={`/shop/${item.id}`}>
+          {/* <Link to={`/shop/${item.id}`}> */}
             <motion.img
               whileHover={{ scale: 1.1 }}
               src={item.imgUrl}
               alt="productImage"
             />
-          </Link>
+          {/* </Link> */}
         </div>
         <div className="p-2 product__info">
           <h3 className="product__name">
