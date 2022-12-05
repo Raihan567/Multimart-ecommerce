@@ -2,15 +2,16 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-const firebaseConfig = {
-  apiKey: "AIzaSyAnf_r1c5uuaxCaA-hC6Ch273Ns98UItus",
-  authDomain: "multi-mart-ecommerce.firebaseapp.com",
-  projectId: "multi-mart-ecommerce",
-  storageBucket: "multi-mart-ecommerce.appspot.com",
-  messagingSenderId: "406717820065",
-  appId: "1:406717820065:web:99bcb45f1410ea49aed4e0",
-};
 
+// const NODE_ENV = process.env.NODE_ENV;
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGE_IN_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+};
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
