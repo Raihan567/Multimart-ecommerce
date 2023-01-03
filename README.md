@@ -1,6 +1,6 @@
 ## Screenshots:
 
-![App Screenshot](https://i.ibb.co/TLHFbKW/Screenshot-84.png)
+![App Screenshot](https://i.ibb.co/Bj6t78Z/Screenshot-83.png)
 
 # Furnizone - A Furniture selling e-commerce app
 
